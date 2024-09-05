@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/navbar">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/profileTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:textSize="40sp"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
+
+                    <Spinner
+                        android:id="@+id/allTimeOrTodaySpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:spinnerMode="dropdown" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/totalDistanceTitleTxt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="56dp"
+                        android:text="Total Distance"
+                        android:textSize="24sp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/totalDurationTitleTxt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="59dp"
+                        android:text="Total Duration"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toStartOf="@+id/numRunsTitleTxt"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/totalDistanceTitleTxt"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/totalDistanceTxt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="37dp"
+                        android:text="0 km"
+                        android:textSize="30dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/totalDurationTxt"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="00:00:00"
+                        android:textSize="30dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/historyTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="History"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="24sp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    tools:listitem="@layout/run_card" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/navbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/navbar_border">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <ImageButton
+                android:id="@+id/profileActivityBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:onClick="onProfileBtnClick"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/stats"
+                android:background="@null"/>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <ImageButton
+                android:id="@+id/runningActivityBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:onClick="onRunningBtnClick"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/running"
+                android:background="@null"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

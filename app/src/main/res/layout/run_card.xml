@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!--A nested linear layout is used because in order to use layout_weight, it must be in a linear layout-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            >
+
+            <TextView
+                android:id="@+id/idTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Run #1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                />
+
+            <TextView
+                android:id="@+id/dateTimeTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2022-12-09 18:25:58 - 2022-12-09 18:25:58"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="16dp"
+                android:gravity="right"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/distanceTitleTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Distance:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                <TextView
+                    android:id="@+id/distanceTxt"
+                    android:paddingLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 m"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/durationTitleTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                <!--Both ellipsize and maxline is needed to not have it overflow-->
+                <TextView
+                    android:id="@+id/durationTxt"
+                    android:paddingLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00:00"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/avgPaceTitleTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Average pace:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                <!--Both ellipsize and maxline is needed to not have it overflow-->
+                <TextView
+                    android:id="@+id/avgPaceTxt"
+                    android:paddingLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 m /s"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/noteTitleTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Session notes:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+            <!--Both ellipsize and maxline is needed to not have it overflow-->
+            <TextView
+                android:id="@+id/noteTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I ran like this before but I am asdasdasdasd I ran like this before but I am I ran like this before but I am I ran like this before but I am I ran like this before but I am I ran like this before but I am I ran like this before but I am I ran like this before but I am I ran like this before but I am "
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:ellipsize="end"
+                android:maxLines="5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/editNoteBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onEditNoteBtnClick"
+                android:background="#f0ad4e"
+                android:text="Edit note" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
